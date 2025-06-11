@@ -1,5 +1,5 @@
 # distutils: language = c
-# distutils: sources = augment/augment.c, com/com.c, mp_math/mp_math.c
+# distutils: sources = slidepy/augment/augment.c slidepy/com/com.c slidepy/mp_math/mp_math.c
 
 import numpy as np
 cimport cython

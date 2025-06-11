@@ -22,21 +22,18 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 extensions = [
     Extension(
-        'slidepy._ext',
-        [
-            'slidepy/_ext.pyx',
+        name='slidepy._ext',
+        sources=[
             'slidepy/augment/augment.c',
             'slidepy/com/com.c',
             'slidepy/mp_math/mp_math.c',
+            'slidepy/_ext.pyx'
             ],
         include_dirs=[numpy.get_include()],
         extra_compile_args = compile_args,
-        extra_link_args = link_args
-        #define_macros=[('NPY_NO_DEPRECATED_API', 'NPY_1_7_API_VERSION')]
-        #language="c++"
+        extra_link_args = link_args,
         )
-    ]
-
+]
 
 # Make sure everything is compiled with pyton 3
 for e in extensions:
